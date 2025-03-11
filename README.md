@@ -1,0 +1,1 @@
+Copy of Google Keep Application with Django.
