@@ -14,7 +14,7 @@ class Note(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
     date_added = models.DateField(auto_now_add=True)
-    tags= models.ManyToManyField()
+    tags= models.ManyToManyField(Tag, blank=True) #Allows notes without a Tag.
 
     def __str__(self):
         return self.title
