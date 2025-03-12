@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('notes/', include('google_keep.urls')),
+    path('keep/', include('google_keep.urls')),
 ]

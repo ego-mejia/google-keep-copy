@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     #My apps
     'google_keep',
 
-
     #Default Django apps
     'django.contrib.admin',
     'django.contrib.auth',
