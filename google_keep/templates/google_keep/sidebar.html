@@ -1,4 +1,23 @@
 <div id="sidebar">
   <h1>Sidebar</h1>
   <!-- Aquí iría el contenido real de tu sidebar -->
+  <div>
+      {% for tag in tags %}
+      <div>{{tag.name}}</div>
+      {% endfor %}
+  </div>
 </div>
+  {% comment %} {% for note in notes %}
+  <li class="note-item">
+    <div>
+      <h2 class="inline-elements">{{ note.title }}</h2>
+      <span class="inline-elements">{{ note.date_added }}</span>
+      <div class="inline-elements">
+        {% for tag in note.tags.all %} {{ tag.name }}{% if not forloop.last %},
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+    <p>{{ note.body }}</p>
+  </li>
+  {% endfor %}
+</ul> {% endcomment %}

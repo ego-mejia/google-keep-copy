@@ -32,6 +32,8 @@
     {% include "google_keep/sidebar.html" %}
     <div id="main-content">
       {% include "google_keep/navbar.html" %}
+      <div id="make-note">{% include "google_keep/make_note.html" %}</div>
+
       <div id="content">{% block content %}{% endblock %}</div>
     </div>
   </body>
