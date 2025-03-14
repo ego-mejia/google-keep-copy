@@ -1,25 +1,18 @@
-<head>
-  <style>
-    .inline-elements {
-      display: inline-block;
-      margin-right: 10px; /* opcional, para separar un poco los elementos */
-    }
-  </style>
-</head>
-<body>
-  <h1>Notas</h1>
-  <ul>
-    {% for note in notes %}
-    <li>
+{% extends "google_keep/base.html" %} {% block content %}
+<h1>Notas</h1>
+<ul>
+  {% for note in notes %}
+  <li class="note-item">
+    <div>
       <h2 class="inline-elements">{{ note.title }}</h2>
-      <p class="inline-elements">{{ note.date_added }}</p>
-      <h4>
+      <span class="inline-elements">{{ note.date_added }}</span>
+      <div class="inline-elements">
         {% for tag in note.tags.all %} {{ tag.name }}{% if not forloop.last %},
-        {%endif %} {% endfor %}
-      </h4>
-
-      <p>{{ note.body }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-</body>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+    <p>{{ note.body }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
